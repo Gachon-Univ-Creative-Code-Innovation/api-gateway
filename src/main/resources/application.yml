@@ -7,6 +7,11 @@ spring:
 
   cloud:
     gateway:
+      httpclient:
+        websocket:
+          max-frame-payload-length: 65536
+        connect-timeout: 10000
+        response-timeout: 600000 # 10분
       default-filters:
         - AddResponseHeader=X-Gateway-Response, Gateway
       globalcors:
@@ -57,5 +62,3 @@ spring:
           uri: ws://a-log.site:8082
           predicates:
             - Path=/ws/chat
-          filters:
-            - RewritePath=/ws/chat, /ws/chat
