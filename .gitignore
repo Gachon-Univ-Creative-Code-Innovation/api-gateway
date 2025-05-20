@@ -1,0 +1,69 @@
+### 기본 ###
+*.log
+*.tmp
+*.swp
+.DS_Store
+.env
+.env.*
+
+### Gradle ###
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### IDEs ###
+.idea
+*.iml
+*.ipr
+*.iws
+out/
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+.sts4-cache
+.apt_generated
+bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### Test Reports ###
+test-output/
+reports/
+
+### OS ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Docker ###
+*.log
+docker-compose.override.yml
+docker-compose.*.yml
+**/target/
+**/logs/
+**/tmp/
+.docker/
+
+### Spring Boot ###
+*.jar
+*.war
+*.ear
+
+### 기타 ###
+# Mac OS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+*.bak
+*.tmp
