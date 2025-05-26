@@ -58,6 +58,11 @@ spring:
           filters:
             - RewritePath=/api/career-service/(?<segment>.*), /api/career/${segment}
 
+        - id: blog-service
+          uri: http://a-log.site:8085
+          predicates:
+            - Path=/api/blog-service/**
+
         - id: websocket-message-service
           uri: ws://a-log.site:8082
           predicates:
