@@ -1,5 +1,6 @@
 server:
   port: 8080
+  forward-headers-strategy: framework
 
 spring:
   application:
@@ -37,33 +38,33 @@ spring:
             - Path=/actuator/health
 
         - id: user-service
-          uri: http://a-log.site:8081
+          uri: http://user-service:8080
           predicates:
             - Path=/api/user-service/**
 
         - id: message-service
-          uri: http://a-log.site:8082
+          uri: http://message-service:8080
           predicates:
             - Path=/api/message-service/**
 
         - id: alarm-service
-          uri: http://a-log.site:8083
+          uri: http://alarm-service:8080
           predicates:
             - Path=/api/alarm-service/**
 
         - id: github-service
-          uri: http://a-log.site:8084
+          uri: http://github-service:8080
           predicates:
             - Path=/api/career-service/**
           filters:
             - RewritePath=/api/career-service/(?<segment>.*), /api/career/${segment}
 
         - id: blog-service
-          uri: http://a-log.site:8085
+          uri: http://blog-service:8080
           predicates:
             - Path=/api/blog-service/**
 
         - id: websocket-message-service
-          uri: ws://a-log.site:8082
+          uri: ws://message-service:8080
           predicates:
             - Path=/ws/chat
