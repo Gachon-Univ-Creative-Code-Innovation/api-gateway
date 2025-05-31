@@ -16,6 +16,7 @@ spring:
       default-filters:
         - AddResponseHeader=X-Gateway-Response, Gateway
       globalcors:
+        add-to-simple-url-handler-mapping: true
         corsConfigurations:
           '[/**]':
             allowedOrigins:
