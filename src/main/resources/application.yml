@@ -19,18 +19,20 @@ spring:
         add-to-simple-url-handler-mapping: true
         corsConfigurations:
           '[/**]':
-            allowedOrigins:
+            allowedOriginPatterns:
+              - "http://localhost:*"
+              - "http://127.0.0.1:*"
               - "https://a-log.site"
-              - "http://a-log.site"
+              - "http://a-log.netlify.app"
               - "https://a-log.netlify.app"
-              - "http://localhost:5173"
             allowedMethods:
               - GET
               - POST
               - PUT
               - DELETE
               - OPTIONS
-            allowedHeaders: "*"
+            allowedHeaders:
+              - "*"
             allowCredentials: true
       routes:
         - id: gateway-health
