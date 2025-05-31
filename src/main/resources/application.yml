@@ -15,22 +15,22 @@ spring:
         response-timeout: 600000 # 10분
       default-filters:
         - AddResponseHeader=X-Gateway-Response, Gateway
-#      globalcors:
-#        corsConfigurations:
-#          '[/**]':
-#            allowedOrigins:
-#              - "https://a-log.site"
-#              - "http://a-log.site"
-#              - "https://a-log.netlify.app"
-#              - "http://localhost:5173"
-#            allowedMethods:
-#              - GET
-#              - POST
-#              - PUT
-#              - DELETE
-#              - OPTIONS
-#            allowedHeaders: "*"
-#            allowCredentials: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "https://a-log.site"
+              - "http://a-log.site"
+              - "https://a-log.netlify.app"
+              - "http://localhost:5173"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
       routes:
         - id: gateway-health
           uri: http://localhost:8080
