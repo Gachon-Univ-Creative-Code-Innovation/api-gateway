@@ -57,7 +57,7 @@ spring:
             - Path=/api/alarm-service/**
 
         - id: github-service
-          uri: http://github-service:8080
+          uri: http://github-service:8000
           predicates:
             - Path=/api/career-service/**
           filters:
